@@ -1,33 +1,25 @@
-def sort_contacts(tuplex):
-    names = []
-    for (k,v) in tuplex.items():
-        names.append(k)
-    
-    names = sorted(names)
-    
-    newList = []
-    
-    for each in names:
-        for pair in tuplex[each]:
-            tup = (each, pair)
-            newList.append(tup)
-    
-    print(newList)
+import random
 
-sort_contacts({"Horney, Karen": ("1-541-656-3010", "karen@psychoanalysis.com"),
-        "Welles, Orson": ("1-312-720-8888", "orson@notlive.com"),
-        "Freud, Anna": ("1-541-754-3010", "anna@psychoanalysis.com")}), [('Freud, Anna', '1-541-754-3010',
-        'anna@psychoanalysis.com'), ('Horney, Karen', '1-541-656-3010', 'karen@psychoanalysis.com'),
-        ('Welles, Orson', '1-312-720-8888', 'orson@notlive.com')]
-# sort_contacts({"Summitt, Pat": ("1-865-355-4320", "pat@greatcoaches.com"),
-#     "Rudolph, Wilma": ("1-410-5313-584", "wilma@olympians.com")}),[('Rudolph, Wilma', '1-410-5313-584', 'wilma@olympians.com'),
-#     ('Summitt, Pat', '1-865-355-4320', 'pat@greatcoaches.com')]
-# sort_contacts({"Dinesen, Isak": ("1-718-939-2548", "isak@storytellers.com")}),
-#     [('Dinesen, Isak', '1-718-939-2548', 'isak@storytellers.com')])
-# sort_contacts({"Rimbaud, Arthur": ("1-636-555-5555", "arthur@notlive.com"),
-#     "Swinton, Tilda": ("1-917-222-2222", "tilda@greatActors.com"),
-#     "Almodovar, Pedro": ("1-990-622-3892", "pedro@filmbuffs.com"), "Kandinsky, Wassily":
-#     ("1-333-555-9999", "kandinsky@painters.com")}), [('Almodovar, Pedro', '1-990-622-3892',
-#     'pedro@filmbuffs.com'), ('Kandinsky, Wassily', '1-333-555-9999', 'kandinsky@painters.com'),
-#     ('Rimbaud, Arthur', '1-636-555-5555', 'arthur@notlive.com'), ('Swinton, Tilda',
-#     '1-917-222-2222', 'tilda@greatActors.com')]
+poem = open("poem.txt")
+
+aList = []
+
+for line in poem:
+    aList.append(line)
+
+poem.close()
+
+dit = {}
+
+i = 0
+
+while i < 10:
+    for line in aList:
+        key = random.choice(line)
+        val = random.randint(0, 100)
+        val2 = random.randint(0, 100)
+        tup = (val, val2)
+        dit[key] = tup
+    i += 1
+
+print(dit)
