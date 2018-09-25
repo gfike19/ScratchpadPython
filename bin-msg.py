@@ -1,18 +1,29 @@
-def getBinMsg(msg):
-    lst = []
-    for char in msg:
-        lst.append(ord(char))
+import string
 
-    msg = ""
-    for each in lst:
-        msg += "{0:b}".format(each)
+punc = string.punctuation
 
-    return msg 
+msg = input("Enter some text: ")
 
-repeat = 'y'
+alist = []
 
-while repeat =='y':
-    string = input("Enter a message: ")
-    binMsg = getBinMsg(string)
-    print("The binary version of", string, "is", binMsg)
-    repeat = input("Enter another message? (y/n) ")
+newMsg = ""
+
+for each in msg:
+    if each.isalpha():
+        temp = ord(each)
+        newMsg += "{0:b}".format(temp)
+        newMsg += " "
+    elif each in punc or each == " ":
+        newMsg += each
+    # else:
+    #     alist.append(each)
+
+
+
+# for each in alist:
+#     if type(each) == int:
+        
+#     else:
+#         newMsg += each
+
+print(newMsg)
