@@ -1,7 +1,12 @@
-import string
+string = "Sphinx of black quartz, judge my vow!"
+dit = {}
 
-i = 0
+for each in string:
+    if dit[each] == "":
+        dit[each] = 1
+    else:
+        val = dit[each]
+        dit[each] = val + 1
 
-for each in string.ascii_lowercase:
-    print(each,i)
-    i += 1
+for k,v in dit:
+    print(k + ": " + v)
