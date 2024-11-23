@@ -2,10 +2,11 @@
 
 ## 11/23/2024
 ### Added
-1. extract text, and grab-links projects along with CHANGELOG
+1. added extract text, and grab-links projects along with CHANGELOG
 2. Readded gitignore configured for Python
 ### Updated
-1. README to actually say what this repo is for
+1. updated README to actually say what this repo is for
+2. changed grab links file to create list
 
 ## Pre 2024
 commit 3ce54973bf23245a31f11e742654d0853903acdf
